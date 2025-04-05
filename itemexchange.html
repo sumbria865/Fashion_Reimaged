@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Fashion Reimagined</title>
+</head>
+<body>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <img src="fashionlogo.webp" width="50" height="50">
+            <span class="ml-3 text-xl">Fashion Reimagined</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a href="index.html" class="mr-5 hover:text-gray-900">Home</a>
+            <a href="itemexchange.html" class="mr-5 hover:text-gray-900">Item Exchange</a>
+            <a href="arv.html" class="mr-5 hover:text-gray-900">Virtual Try-On</a>
+            <a href="community.html" class="mr-5 hover:text-gray-900">Community</a>
+            <a href="about.html" class="mr-5 hover:text-gray-900">About</a>
+          </nav>
+          <form action="login.html">
+            <input type="submit" value="Logout" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" />
+          </form>        
+        </div>
+      </header>
+
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          
+            <!-- Preview Section -->
+    <section id="previewBox" class="hidden text-gray-600 body-font overflow-hidden mt-10">
+        <div class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/5 mx-auto flex flex-wrap bg-white p-6 rounded-lg shadow-lg">
+                <img id="previewImage" alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded">
+                <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                    <h2 class="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2>
+                    <h1 id="previewTitle" class="text-gray-900 text-3xl title-font font-medium mb-1"></h1>
+                    <div class="flex mb-4">
+                        <span class="flex items-center">
+                            ⭐⭐⭐⭐⭐
+                            <span class="text-gray-600 ml-3">4 Reviews</span>
+                        </span>
+                    </div>
+                    <p class="leading-relaxed">Comfortable and stylish maternity wear for every occasion.</p>
+                    <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
+                        <div class="flex">
+                            <span class="mr-3">Color</span>
+                            <button class="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
+                            <button class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
+                            <button class="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
+                        </div>
+                        <div class="flex ml-6 items-center">
+                            <span class="mr-3">Size</span>
+                            <div class="relative">
+                                <select class="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10">
+                                    <option>SM</option>
+                                    <option>M</option>
+                                    <option>L</option>
+                                    <option>XL</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <span id="previewPrice" class="title-font font-medium text-2xl text-gray-900"></span>
+                        <a href="payments.html" class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Buy Now</a>
+                        <button onclick="closePreview()" class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                            ✖
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+            <!-- Women Tops Section -->
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Women Tops</h2>
+            <div class="flex flex-wrap -m-4">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a onclick="showPreview('top2.jpeg', 'Shooting Stars', '$21.15')" class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="top2.jpeg">
+                    </a>
+                    <div class="mt-4">
+                        <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+                        <p class="mt-1">$16.00</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a onclick="showPreview('top1.jpg', 'Shooting Stars', '$21.15')" class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="top1.jpg">
+                    </a>
+                    <div class="mt-4">
+                        <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+                        <p class="mt-1">$16.00</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a onclick="showPreview('top3.jpg', 'Shooting Stars', '$21.15')" class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="top3.jpg">
+                    </a>
+                    <div class="mt-4">
+                        <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+                        <p class="mt-1">$16.00</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a onclick="showPreview('top4.jpg', 'Shooting Stars', '$21.15')" class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="top4.jpg">
+                    </a>
+                    <div class="mt-4">
+                        <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+                        <p class="mt-1">$16.00</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Maternity Clothes Section -->
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Maternity Clothes</h2>
+
+    <div class="flex flex-wrap -m-4">
+        <!-- Image 1 -->
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a onclick="showPreview('mat1.jpg', 'Shooting Stars', '$21.15')" class="block relative h-48 rounded overflow-hidden cursor-pointer">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="mat1.jpg">
+            </a>
+            <div class="mt-4">
+                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
+                <p class="mt-1">$21.15</p>
+            </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a onclick="showPreview('mat2.webp', 'The Catalyzer', '$16.00')" class="block relative h-48 rounded overflow-hidden cursor-pointer">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="mat2.webp">
+            </a>
+            <div class="mt-4">
+                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+                <p class="mt-1">$16.00</p>
+            </div>
+        </div>
+    </div>
+
+            <!-- Women Kurtis Section -->
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Women Kurtis</h2>
+            <div class="flex flex-wrap -m-4">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a onclick="showPreview('kurti1.jpg', 'Shooting Stars', '$21.15')" class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="kurti1.webp">
+                    </a>
+                    <div class="mt-4">
+                        <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
+                        <p class="mt-1">$12.00</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a onclick="showPreview('Dress5.webp', 'Shooting Stars', '$21.15')" class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="Dress5.webp">
+                    </a>
+                    <div class="mt-4">
+                        <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+                        <p class="mt-1">$16.00</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a onclick="showPreview('kurti1.webp', 'Shooting Stars', '$21.15')" class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="kurti1.webp">
+                    </a>
+                    <div class="mt-4">
+                        <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+                        <p class="mt-1">$16.00</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Additional Categories -->
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Other Categories</h2>
+            <div class="flex flex-wrap -m-4">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a onclick="showPreview('pant1.jpg', 'Shooting Stars', '$21.15')" class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="pant1.jpg">
+                    </a>
+                    <div class="mt-4">
+                        <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
+                        <p class="mt-1">$18.40</p>
+                    </div>
+                </div>
+    
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a onclick="showPreview('pant2.jpg', 'Shooting Stars', '$21.15')" class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="pant2.jpg">
+                    </a>
+                    <div class="mt-4">
+                        <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+                        <p class="mt-1">$16.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function showPreview(image, title, price) {
+                document.getElementById('previewImage').src = image;
+                document.getElementById('previewTitle').innerText = title;
+                document.getElementById('previewPrice').innerText = price;
+                document.getElementById('previewBox').classList.remove('hidden');
+            }
+    
+            function closePreview() {
+                document.getElementById('previewBox').classList.add('hidden');
+            }
+        </script>
+
+    </section>    
+
+    <footer class="text-white body-font bg-black">
+        <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+                    <img src="fashionlogo.webp" width="50" height="50">
+                    <span class="ml-3 text-xl">Fashion Reimagined</span>
+                </a>
+                <p class="mt-2 text-sm text-white">Sustainable Fashion Exchange for Women</p>
+            </div>
+            <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">ABOUT</h2>
+                    <nav class="list-none mb-10">
+                        <li><a href="index.html" class="text-white hover:text-gray-300">Home</a></li>
+                        <li><a href="about.html" class="text-white hover:text-gray-300">About us</a></li>
+                        <li><a class="text-white hover:text-gray-300">Third Link</a></li>
+                        <li><a href="contact.html" class="text-white hover:text-gray-300">Contact us</a></li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">ITEM EXCHANGE</h2>
+                    <nav class="list-none mb-10">
+                        <li><a href="itemexchange.html" class="text-white hover:text-gray-300">Women Tops</a></li>
+                        <li><a href="itemexchange.html" class="text-white hover:text-gray-300">Maternity Clothes</a></li>
+                        <li><a href="itemexchange.html" class="text-white hover:text-gray-300">Women Kurtis</a></li>
+                        <li><a href="itemexchange.html" class="text-white hover:text-gray-300">Women Pants</a></li>
+                        <li><a href="itemexchange.html" class="text-white hover:text-gray-300">Women Formals</a></li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Augmented VR</h2>
+                    <nav class="list-none mb-10">
+                        <li><a href="artry.html" class="text-white hover:text-gray-300">AVR Try-On</a></li>
+                        <li><a href="arv.html" class="text-white hover:text-gray-300">AVR</a></li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">COMMUNITY</h2>
+                    <nav class="list-none mb-10">
+                        <li><a href="community.html" class="text-white hover:text-gray-300">Engage in Discussions</a></li>
+                        
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-900">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-white text-sm text-center sm:text-left">© 2025 PSS —
+                    <a rel="noopener noreferrer" class="text-white ml-1" target="_blank">Sanvida, Saayna, Prinka</a>
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                    <a class="text-white hover:text-gray-300">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-white hover:text-gray-300">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-white hover:text-gray-300">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-white hover:text-gray-300">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

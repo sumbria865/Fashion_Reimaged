@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Community & Exchange</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <h1 class="text-3xl font-bold text-gray-900 text-center mb-6">Fashion Exchange & Community Discussions</h1>
+            
+            <!-- Post Form -->
+            <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-xl font-semibold mb-4">Share Your Thoughts</h2>
+                <input id="name" type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded mb-2">
+                <textarea id="postContent" placeholder="Share your fashion ideas, reviews, or challenges..." class="w-full p-3 border border-gray-300 rounded mb-2"></textarea>
+                <button onclick="addPost()" class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-700">Post</button>
+            </div>
+
+            <!-- Discussion Section -->
+            <div id="discussionSection" class="space-y-4">
+                <!-- User posts will appear here -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function addPost() {
+            const name = document.getElementById("name").value.trim();
+            const content = document.getElementById("postContent").value.trim();
+            
+            if (name && content) {
+                const postContainer = document.createElement("div");
+                postContainer.className = "bg-white p-4 rounded-lg shadow-md";
+                
+                postContainer.innerHTML = `
+                    <h3 class="font-semibold">${name}</h3>
+                    <p class="text-gray-700">${content}</p>
+                    <div class="flex space-x-4 mt-2">
+                        <button class="text-indigo-500 hover:text-indigo-700">Like</button>
+                        <button class="text-indigo-500 hover:text-indigo-700">Comment</button>
+                    </div>
+                `;
+                
+                document.getElementById("discussionSection").prepend(postContainer);
+                document.getElementById("name").value = "";
+                document.getElementById("postContent").value = "";
+            } else {
+                alert("Please enter both name and content!");
+            }
+        }
+    </script>
+</body>
+</html>

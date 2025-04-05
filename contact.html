@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function showSuccessMessage() {
+            const successMessage = document.getElementById('success-message');
+            successMessage.classList.remove('hidden');
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+            }, 3000);
+        }
+    </script>
+</head>
+<body>
+    <section class="bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-lg mx-auto text-center">
+          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Let’s Connect
+          </h2>
+          <p class="mt-4 text-lg text-gray-500">
+            We’re so excited to be part of your brand’s sustainability journey!
+            Reach out to us directly at <a href="mailto:prinkadevi2801@gmail.com" class="text-blue-600">prinkadevi2801@gmail.com</a> or connect with us on 
+            <a href="https://twitter.com/your_twitter_handle" target="_blank" class="text-blue-600">Twitter</a> or <a href="https://instagram.com/your_instagram_handle" target="_blank" class="text-blue-600">Instagram</a> or fill out the form below.
+          </p>
+          <p class="mt-2 text-lg text-gray-500">
+            Please send us your details and we’ll reach out to you within 48 business hours.
+          </p>
+      
+          <p class="mt-4 text-lg text-gray-500">
+            Have a question about getting certified with us? <a href="faq.html" class="text-blue-600">Check out our FAQs here.</a>
+          </p>
+      
+          <div class="mt-8">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Connect with Us:</h3>
+            <div class="flex justify-center space-x-4">
+              <a href="https://twitter.com/your_twitter_handle" target="_blank" class="text-gray-500 hover:text-gray-700 text-xs">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg>
+              </a>
+              <a href="https://instagram.com/your_instagram_handle" target="_blank" class="text-gray-500 hover:text-gray-700 text-xs">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+              </a>
+              <a href="mailto:prinkadevi2801@gmail.com" class="text-gray-500 hover:text-gray-700 text-xs">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Contact Form -->
+        <div class="mt-8 max-w-xl mx-auto">
+          <form action="https://docs.google.com/forms/d/e/1FAIpQLSez5HJ4Yw4kKgUDn-T0qAa1ntaSwPiH7mEByMgbgX0w2booCg/formResponse" method="POST" onsubmit="showSuccessMessage()" class="grid grid-cols-1 gap-6">
+            <div>
+              <label for="first-name" class="block text-sm font-medium text-gray-700">First Name</label>
+              <input type="text" id="first-name" name="entry.1000000" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+            </div>
+            <div>
+              <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name</label>
+              <input type="text" id="last-name" name="entry.1000001" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+              <input type="email" id="email" name="entry.1000002" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">How can we help?</label>
+              <textarea id="message" name="entry.1000003" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+            </div>
+            <div>
+              <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Submit Now
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Success Message -->
+        <div id="success-message" class="hidden text-green-600 text-lg font-semibold mt-4">
+            Submitted successfully! We’ll get back to you soon.
+        </div>
+      </section>
+</body>
+</html>
