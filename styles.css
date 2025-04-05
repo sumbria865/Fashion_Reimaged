@@ -1,0 +1,115 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Background Image */
+body {
+    background: url("../images/bg-fashion.jpg") no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: rgba(106, 13, 173, 0.9);
+    color: white;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Sale Banner */
+.sale-banner {
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 1.2rem;
+    padding: 10px;
+    color: yellow;
+    font-weight: bold;
+}
+
+/* Sale GIF */
+.sale-gif-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.sale-gif-container img {
+    width: 250px;
+    height: auto;
+}
+
+/* Try-On Container */
+.tryon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.image-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+}
+
+/* Upload Button */
+.upload-container {
+    margin-top: 20px;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #ff4081;
+    color: white;
+    border-radius: 5px;
+}
+
+.upload-container input {
+    display: none;
+}
+
+/* Dropdown Menu */
+.dropdown-container {
+    margin-top: 20px;
+}
+
+#dressSelector {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#tryOnButton {
+    margin-left: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #6a0dad;
+    color: white;
+    transition: 0.3s;
+}
+
+#tryOnButton:hover {
+    background-color: #5700a3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #222;
+    padding: 15px;
+    font-size: 14px;
+}
