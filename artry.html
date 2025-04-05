@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Exchange AR Try-On</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>👗 Fashion Exchange</h1>
+        <!-- Sale Marquee -->
+        <marquee behavior="scroll" direction="left" class="sale-banner">
+            🛍️ Huge Discounts on Bridal Dresses & Winter Fashion! 🎉 Shop Now!
+        </marquee>
+    </header>
+
+    <section class="hero">
+        <h2>Try On Your Outfit in AR</h2>
+        <p>Upload your headshot and select an outfit to preview how it looks on you!</p>
+    </section>
+    <!-- Sale GIF Section -->
+    <div class="sale-gif-container">
+        <img src="sale-banner.gif" alt="Sale GIF">
+    </div>
+
+    
+
+    <!-- Try-On Container -->
+    <div class="tryon-container">
+        <div class="image-wrapper">
+            <img id="headshot-overlay" src="" alt="User Headshot">
+            <img id="clothing-overlay" src="" alt="Clothing Overlay">
+        </div>
+    </div>
+
+    <!-- Upload Headshot -->
+    <div class="upload-container">
+        <label for="headshotUpload" class="custom-file-upload">📸 Upload Your Headshot</label>
+        <input type="file" id="headshotUpload" accept="image/*">
+    </div>
+
+    <!-- Clothing Selection (Dropdown Menu) -->
+    <div class="dropdown-container">
+        <label for="dressSelector">👗 Select a Dress:</label>
+        <select id="dressSelector">
+            <option value="" disabled selected>Select an Outfit</option>
+            <option value="Bridal.jpg">👰 Bridal Dress</option>
+            <option value="LongJacket.jpg">🧥 Long Jacket</option>
+            <option value="BridalShower.jpg">🎀 Bridal Shower</option>
+            <option value="Maternity.jpg">🤰 Maternity</option>
+            <option value="Maternity2.jpg">🤰 Maternity 2</option>
+            <option value="PinkGown.jpg">💃 Pink Gown</option>
+            <option value="Pregnancy.jpg">🤱 Pregnancy</option>
+            <option value="Pregnancy2.jpg">🤱 Pregnancy 2</option>
+            <option value="WeddingGown2.jpg">👗 Wedding Gown</option>
+            <option value="WinterFashion.jpg">🧣 Winter Fashion</option>
+        </select>
+        <button id="tryOnButton">Try On</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const headshotUpload = document.getElementById("headshotUpload");
+    const headshotOverlay = document.getElementById("headshot-overlay");
+    const clothingOverlay = document.getElementById("clothing-overlay");
+    const dressSelector = document.getElementById("dressSelector");
+    const tryOnButton = document.getElementById("tryOnButton");
+
+    headshotUpload.addEventListener("change", function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                headshotOverlay.src = e.target.result;
+                headshotOverlay.style.display = "block";
+                adjustHeadPosition();
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    tryOnButton.addEventListener("click", function () {
+        const selectedDress = dressSelector.value;
+        if (selectedDress) {
+            clothingOverlay.src = selectedDress;
+            clothingOverlay.style.display = "block";
+            adjustHeadPosition();
+        }
+    });
+
+    function adjustHeadPosition() {
+        headshotOverlay.style.width = "250px";
+        clothingOverlay.style.width = "250px";
+    }
+});
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Fashion Exchange | Empowering Sustainable Fashion</p>
+    </footer>
+</body>
+</html>

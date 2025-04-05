@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Mission, Our Vision, and Values</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Hover and Click Styles */
+        .value-box {
+            cursor: pointer;
+            background-color: #f7fafc; /* Light background */
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .value-box:hover {
+            background-color: #38b2ac; /* Green on hover */
+            color: white; /* Text color changes to white on hover */
+        }
+
+        /* Clicked State - Second Color */
+        .clicked {
+            background-color: #2f855a; /* Darker green when clicked */
+            color: white;
+        }
+
+        /* Hidden Content */
+        .hidden {
+            display: none;
+        }
+
+        /* Show the content when active */
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header id="home-section" class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <img src="fashionlogo.webp" width="50" height="50">
+            <span class="ml-3 text-xl">Fashion Reimagined</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a href="index.html" class="mr-5 hover:text-gray-900">Home</a>
+            <a href="#services-section" class="mr-5 hover:text-gray-900">Services</a>
+            <a href="itemexchange.html" class="mr-5 hover:text-gray-900">Item Exchange</a>
+            <a href="arv.html" class="mr-5 hover:text-gray-900">Virtual Try-On</a>
+            <a href="community.html" class="mr-5 hover:text-gray-900">Community</a>
+            <a href="about.html" class="mr-5 hover:text-gray-900">About</a>
+          </nav>
+          <form action="login.html">
+            <input type="submit" value="Logout" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" />
+          </form>        
+        </div>
+      </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                <!-- Mission Image Section -->
+                <div class="lg:w-1/2 w-full flex justify-center items-center">
+                    <img alt="Fashion Mission" class="lg:w-3/4 w-full lg:h-auto h-64 object-cover object-center rounded" width="427" height="268" src="women.jpg.jpg">
+                </div>
+
+                <!-- Mission Details Section -->
+                <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">Our Mission</h1>
+
+                    <p class="leading-relaxed mb-4">
+                        Fashion Reimagined's mission is to certify and elevate fashion brands that are committed to responsible, sustainable, and ethical practices. Through educational initiatives, we aim to inspire a shift towards a more sustainable fashion industry, while continuously raising awareness about the impact of fashion choices on the environment and society.
+                    </p>
+
+                    <!-- Mission Expanded Paragraph -->
+                    <div class="bg-green-500 text-white p-8 rounded-lg hover-paragraph" onclick="toggleParagraph('missionContent')">
+                        <p class="leading-relaxed text-xl">
+                            Fashion is an expression of individuality and creativity. At Fashion Reimagined, we believe that fashion can be beautiful and responsible at the same time. Our mission is to celebrate the artistry of fashion while ensuring it aligns with sustainable, ethical, and eco-friendly practices. We are dedicated to reshaping the fashion landscape for a better tomorrow.
+                        </p>
+                    </div>
+
+                    <div id="missionContent" class="hidden mt-6 text-center">
+                        <p class="leading-relaxed text-xl font-bold text-gray-800">
+                            We envision a future where the fashion industry embraces sustainability, inclusivity, and responsibility, ensuring that every fashion choice supports the well-being of our planet and its people.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <!-- Our Vision Section -->
+            <div class="container px-5 py-24 mx-auto">
+                <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                    <!-- Vision Image Section -->
+                    <div class="lg:w-1/2 w-full flex justify-center items-center">
+                        <img alt="Our Vision" class="lg:w-3/4 w-full lg:h-auto h-64 object-cover object-center rounded" width="427" height="268" src="https://globalmeasure.org/wp-content/uploads/2023/08/GLOBALMEASURE_061323_32-scaled.jpg">
+                    </div>
+
+                    <!-- Vision Details Section -->
+                    <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+                        <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">Our Vision</h1>
+
+                        <p class="leading-relaxed mb-4">
+                            Fashion Reimagined envisions a future where sustainable fashion certification becomes the standard for all brands globally. We are committed to leading this change by being the first Canadian sustainable certification offering and a respected thought leader within the sustainable fashion ecosystem.
+                        </p>
+
+                        <p class="leading-relaxed mb-4">
+                            Our vision is to transform the fashion industry by making sustainable and ethical practices the norm. We want to empower brands to make eco-conscious decisions and foster a global movement towards responsible fashion.
+                        </p>
+
+                        <div class="bg-green-500 text-white p-8 rounded-lg hover-paragraph" onclick="toggleParagraph('visionContent')">
+                            <p class="leading-relaxed text-xl">
+                                We see a world where fashion is both sustainable and ethical. Every designer, brand, and consumer makes choices that reflect a commitment to preserving our environment and supporting fair labor practices. Our ultimate goal is to make sustainability and ethics the core of the fashion industry.
+                            </p>
+                        </div>
+
+                        <div id="visionContent" class="hidden mt-6 text-center">
+                            <p class="leading-relaxed text-xl font-bold text-gray-800">
+                                As the fashion industry continues to evolve, Fashion Reimagined will be at the forefront of driving change, pushing for widespread adoption of sustainable practices, and inspiring consumers and brands alike to rethink their impact on the world.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Values Section -->
+            <div class="container px-5 py-24 mx-auto">
+                <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">Our Values</h1>
+
+                    <!-- Values List -->
+                    <div class="flex flex-wrap">
+                        <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+                            <div class="value-box" onclick="toggleContent('sustainabilityContent')">
+                                <h2 class="text-2xl text-gray-800 font-semibold">Sustainability</h2>
+                            </div>
+                            <div id="sustainabilityContent" class="hidden p-4">
+                                <p class="leading-relaxed mt-4">Fashion Reimagined is committed to a circular fashion economy. We champion sustainable practices from sourcing eco-friendly materials to reducing waste and supporting ethical brands that prioritize environmental preservation.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+                            <div class="value-box" onclick="toggleContent('empowermentContent')">
+                                <h2 class="text-2xl text-gray-800 font-semibold">Empowerment</h2>
+                            </div>
+                            <div id="empowermentContent" class="hidden p-4">
+                                <p class="leading-relaxed mt-4">We empower individuals and brands to make fashion choices that support a sustainable and ethical future. Through education, certification, and access to resources, we help build a community of conscious consumers and designers.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+                            <div class="value-box" onclick="toggleContent('collaborationContent')">
+                                <h2 class="text-2xl text-gray-800 font-semibold">Collaboration</h2>
+                            </div>
+                            <div id="collaborationContent" class="hidden p-4">
+                                <p class="leading-relaxed mt-4">Collaboration is at the heart of what we do. We work with designers, brands, and organizations to drive positive change, create sustainable fashion, and bring innovative solutions to life for a better future.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+                            <div class="value-box" onclick="toggleContent('innovationContent')">
+                                <h2 class="text-2xl text-gray-800 font-semibold">Innovation</h2>
+                            </div>
+                            <div id="innovationContent" class="hidden p-4">
+                                <p class="leading-relaxed mt-4">Innovation drives us forward. We embrace cutting-edge technologies, materials, and practices that challenge the status quo of fashion, ensuring that sustainability and ethics are at the core of everything we do.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // JavaScript to toggle the visibility of the paragraphs based on the section
+        function toggleContent(contentId) {
+            var content = document.getElementById(contentId);
+            // Toggle between showing and hiding the content
+            content.classList.toggle('hidden');
+            content.classList.toggle('show');
+            
+            // Toggle the 'clicked' state to show the second color
+            var valueBox = content.previousElementSibling;
+            valueBox.classList.toggle('clicked');
+        }
+        
+        // JavaScript to toggle mission and vision content visibility
+        function toggleParagraph(sectionId) {
+            var paragraph = document.getElementById(sectionId);
+            paragraph.classList.toggle('hidden');
+            paragraph.classList.toggle('show');
+        }
+    </script>
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">OUR TEAM</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+              Our team is passionate about pushing the boundaries of fashion. We combine creativity and innovation to reimagine the future of fashion and empower our community with sustainable, unique styles.
+            </p>
+          </div>
+          <div class="flex flex-wrap -m-4">
+            <div class="p-4 lg:w-1/2">
+              <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="Men1.jpg.jpg">
+                <div class="flex-grow sm:pl-8">
+                  <h2 class="title-font font-medium text-lg text-gray-900">Holden Caulfield</h2>
+                  <h3 class="text-gray-500 mb-3">Lead Designer</h3>
+                  <p class="mb-4">A visionary in blending classic and futuristic fashion, Holden leads our design team, creating sustainable yet stylish designs that define the new era of fashion.</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 lg:w-1/2">
+              <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="Women1.jpg.jpg">
+                <div class="flex-grow sm:pl-8">
+                  <h2 class="title-font font-medium text-lg text-gray-900">Alper Kamu</h2>
+                  <h3 class="text-gray-500 mb-3">Sustainability Specialist</h3>
+                  <p class="mb-4">Alper is dedicated to ensuring that our fashion reimagined collection stays true to sustainable practices, sourcing eco-friendly materials, and promoting ethical fashion.</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 lg:w-1/2">
+              <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="men3.jpg.jpg">
+                <div class="flex-grow sm:pl-8">
+                  <h2 class="title-font font-medium text-lg text-gray-900">Atticus Finch</h2>
+                  <h3 class="text-gray-500 mb-3">Creative Director</h3>
+                  <p class="mb-4">With a keen eye for innovation and cutting-edge trends, Atticus leads our creative team, ensuring that our designs always push the envelope and define the future of fashion.</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 lg:w-1/2">
+              <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="Men1.jpg.jpg">
+                <div class="flex-grow sm:pl-8">
+                  <h2 class="title-font font-medium text-lg text-gray-900">Henry Letham</h2>
+                  <h3 class="text-gray-500 mb-3">Fashion Expert</h3>
+                  <p class="mb-4">Henry brings a wealth of knowledge in the fashion industry, guiding us through market trends and helping us create designs that resonate with fashion-forward individuals.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="text-white body-font bg-black">
+        <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+                    <img src="fashionlogo.webp" width="50" height="50">
+                    <span class="ml-3 text-xl">Fashion Reimagined</span>
+                </a>
+                <p class="mt-2 text-sm text-white">Sustainable Fashion Exchange for Women</p>
+            </div>
+            <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">ABOUT</h2>
+                    <nav class="list-none mb-10">
+                        <li><a href="index.html" class="text-white hover:text-gray-300">Home</a></li>
+                        <li><a href="about.html" class="text-white hover:text-gray-300">About us</a></li>
+                        <li><a class="text-white hover:text-gray-300">Third Link</a></li>
+                        <li><a href="contact.html" class="text-white hover:text-gray-300">Contact us</a></li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">ITEM EXCHANGE</h2>
+                    <nav class="list-none mb-10">
+                        <li><a href="itemexchange.html" class="text-white hover:text-gray-300">Women Tops</a></li>
+                        <li><a href="itemexchange.html" class="text-white hover:text-gray-300">Maternity Clothes</a></li>
+                        <li><a href="itemexchange.html" class="text-white hover:text-gray-300">Women Kurtis</a></li>
+                        <li><a href="itemexchange.html" class="text-white hover:text-gray-300">Women Pants</a></li>
+                        <li><a href="itemexchange.html" class="text-white hover:text-gray-300">Women Formals</a></li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Augmented VR</h2>
+                    <nav class="list-none mb-10">
+                        <li><a href="artry.html" class="text-white hover:text-gray-300">AVR Try-On</a></li>
+                        <li><a href="arv.html" class="text-white hover:text-gray-300">AVR</a></li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">COMMUNITY</h2>
+                    <nav class="list-none mb-10">
+                        <li><a href="community.html" class="text-white hover:text-gray-300">Engage in Discussions</a></li>
+                        
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-900">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-white text-sm text-center sm:text-left">© 2025 PSS —
+                    <a rel="noopener noreferrer" class="text-white ml-1" target="_blank">Sanvida, Saayna, Prinka</a>
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                    <a class="text-white hover:text-gray-300">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-white hover:text-gray-300">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-white hover:text-gray-300">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-white hover:text-gray-300">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

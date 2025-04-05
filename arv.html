@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR-Based Virtual Try-Ons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function tryWithAR(imageSrc) {
+            document.getElementById("ar-image").src = imageSrc;
+        }
+    </script>
+    <style>
+        .ar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            background-color: #f7f7f7;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="bg-black text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">Fashion Reimagined</a>
+            <nav>
+                <a href="index.html" class="text-white hover:text-gray-400 mx-4">Home</a>
+                <a href="itemexchange.html" class="text-white hover:text-gray-400 mx-4">Item Exchange</a>
+                <a href="community.html" class="text-white hover:text-gray-400 mx-4">Community</a>
+                <a href="contact.html" class="text-white hover:text-gray-400 mx-4">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container mx-auto py-12">
+        <h1 class="text-center text-3xl font-semibold mb-6">Try Your Clothes Virtually!</h1>
+        <p class="text-center mb-8 text-lg text-gray-600">Visualize how these clothes look before you claim them using AR technology!</p>
+
+        <div class="ar-container">
+            <div id="ar-view" class="w-full md:w-2/3 bg-white shadow-xl rounded-lg p-6">
+                <h2 class="text-center text-2xl font-bold mb-4">AR Virtual Try-On</h2>
+                <p class="text-center text-gray-600 mb-4">Use the camera to visualize how clothes look on you in real-time!</p>
+                <img id="ar-image" src="Bridal.jpg" alt="AR Try On" class="w-full h-96 object-cover rounded-lg mb-4">
+                <p class="text-center text-gray-600">Click below to start virtual try-on experience.</p>
+            </div>
+        </div>
+
+        <div class="mt-12">
+            <h2 class="text-center text-2xl font-semibold mb-6">Browse Our Clothing</h2>
+            <p class="text-center mb-8 text-lg text-gray-600">Select clothes that you want to try virtually.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <img src="tshirt.jpg" alt="T-shirt" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">T-shirt</h3>
+                    <p class="text-gray-600 mb-4">Price: $20.00</p>
+                    <button onclick="tryWithAR('tshirt.jpg')" class="w-full bg-blue-500 text-white py-2 rounded-full hover:bg-blue-600 transition">Try with AR</button>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <img src="dress.jpg" alt="Dress" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Dress</h3>
+                    <p class="text-gray-600 mb-4">Price: $35.00</p>
+                    <button onclick="tryWithAR('dress.jpg')" class="w-full bg-blue-500 text-white py-2 rounded-full hover:bg-blue-600 transition">Try with AR</button>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <img src="jacket.jpg" alt="Jacket" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Jacket</h3>
+                    <p class="text-gray-600 mb-4">Price: $50.00</p>
+                    <button onclick="tryWithAR('jacket.jpg')" class="w-full bg-blue-500 text-white py-2 rounded-full hover:bg-blue-600 transition">Try with AR</button>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <img src="jeans.jpg" alt="Jeans" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Jeans</h3>
+                    <p class="text-gray-600 mb-4">Price: $40.00</p>
+                    <button onclick="tryWithAR('jeans.jpg')" class="w-full bg-blue-500 text-white py-2 rounded-full hover:bg-blue-600 transition">Try with AR</button>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <img src="skirt.jpg" alt="Skirt" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Skirt</h3>
+                    <p class="text-gray-600 mb-4">Price: $30.00</p>
+                    <button onclick="tryWithAR('skirt.jpg')" class="w-full bg-blue-500 text-white py-2 rounded-full hover:bg-blue-600 transition">Try with AR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Fashion Reimagined. All rights reserved.</p>
+            <p>Follow Us: 
+                <a href="https://www.linkedin.com" class="text-white hover:text-blue-600">LinkedIn</a> | 
+                <a href="https://www.instagram.com" class="text-white hover:text-pink-500">Instagram</a> | 
+                <a href="https://www.facebook.com" class="text-white hover:text-blue-700">Facebook</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
