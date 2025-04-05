@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .loading {
+            cursor: wait;
+        }
+
+        /* Hover color */
+        .hover-effect:hover {
+            background-color: #4CAF50;
+        }
+
+        /* Active color */
+        .active {
+            background-color: #45a049;
+        }
+
+        /* Change when button is clicked */
+        .clicked {
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <section class="bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Payment Details</h2>
+            <p class="mt-4 text-lg text-gray-500">Please review the payment options and proceed with your payment.</p>
+        </div>
+
+        <!-- Payment Options Section -->
+        <div class="mt-8 max-w-4xl mx-auto">
+            <h3 class="text-2xl font-semibold text-gray-900 mb-6">Choose Your Payment Method:</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Google Pay -->
+                <div class="border p-6 rounded-md shadow-lg hover:shadow-xl" id="google-pay">
+                    <h4 class="text-xl font-semibold text-gray-900">Google Pay</h4>
+                    <p class="text-gray-500 mt-2">Pay securely with your Google Pay account.</p>
+                    <a href="https://pay.google.com/gp/p/ui/pay?pli=1&purchaseFlow=pay&intent=pay&amount=200&currencyCode=INR&merchantId=your-merchant-id" target="_blank" id="google-pay-btn" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 hover-effect" onclick="toggleButtonState('google-pay-btn')">Pay with Google Pay</a>
+                </div>
+
+                <!-- PhonePe -->
+                <div class="border p-6 rounded-md shadow-lg hover:shadow-xl" id="phonepe">
+                    <h4 class="text-xl font-semibold text-gray-900">PhonePe</h4>
+                    <p class="text-gray-500 mt-2">Pay securely with your PhonePe account.</p>
+                    <a href="https://www.phonepe.com/" target="_blank" id="phonepe-btn" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 hover-effect" onclick="toggleButtonState('phonepe-btn')">Pay with PhonePe</a>
+                </div>
+
+                <!-- Paytm -->
+                <div class="border p-6 rounded-md shadow-lg hover:shadow-xl" id="paytm">
+                    <h4 class="text-xl font-semibold text-gray-900">Paytm</h4>
+                    <p class="text-gray-500 mt-2">Pay securely with your Paytm account.</p>
+                    <a href="https://paytm.com" target="_blank" id="paytm-btn" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 hover-effect" onclick="toggleButtonState('paytm-btn')">Pay with Paytm</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Details Section -->
+        <div class="mt-12 max-w-4xl mx-auto">
+            <h3 class="text-2xl font-semibold text-gray-900 mb-6">Payment Details</h3>
+            <div class="border-t pt-6">
+                <p class="text-gray-700">Transaction ID: <span class="font-semibold" id="transaction-id">1234567890</span></p>
+                <p class="text-gray-700">Date: <span class="font-semibold" id="payment-date">March 8, 2025</span></p>
+                <p class="text-gray-700">Payment Status: <span class="font-semibold" id="payment-status">Pending</span></p>
+            </div>
+        </div>
+
+        <!-- Payment Form -->
+        <div class="mt-8 max-w-xl mx-auto">
+            <form id="payment-form" class="grid grid-cols-1 gap-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+                <div>
+                    <button type="button" id="submit-button" onclick="processPayment()" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Submit Payment</button>
+                </div>
+            </form>
+            <p id="loading-message" class="hidden text-blue-600 mt-4">Processing your payment...</p>
+        </div>
+
+        <!-- Success Message -->
+        <div id="success-message" class="hidden bg-green-100 text-green-700 p-4 rounded-md mt-8">
+            Payment was successful! Thank you for your purchase.
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-message" class="hidden bg-red-100 text-red-700 p-4 rounded-md mt-8">
+            There was an issue with your payment. Please try again.
+        </div>
+    </section>
+
+    <script>
+        // Function to simulate the payment process
+        function processPayment() {
+            // Display loading message
+            document.getElementById('loading-message').classList.remove('hidden');
+            document.getElementById('submit-button').classList.add('loading');
+
+            // Simulate the payment process (you would normally call an API here)
+            setTimeout(function() {
+                // Hide loading message
+                document.getElementById('loading-message').classList.add('hidden');
+                document.getElementById('submit-button').classList.remove('loading');
+
+                // Simulate success (you would check the real payment status here)
+                const paymentSuccess = true; // Change to false to simulate failure
+
+                if (paymentSuccess) {
+                    // Update payment status
+                    document.getElementById('payment-status').textContent = 'Successful';
+                    document.getElementById('payment-status').classList.add('text-green-600');
+                    document.getElementById('payment-status').classList.remove('text-red-600');
+
+                    // Show success message
+                    document.getElementById('success-message').classList.remove('hidden');
+
+                    // Hide error message if payment is successful
+                    document.getElementById('error-message').classList.add('hidden');
+                } else {
+                    // Update payment status
+                    document.getElementById('payment-status').textContent = 'Failed';
+                    document.getElementById('payment-status').classList.add('text-red-600');
+                    document.getElementById('payment-status').classList.remove('text-green-600');
+
+                    // Show error message
+                    document.getElementById('error-message').classList.remove('hidden');
+
+                    // Hide success message if payment fails
+                    document.getElementById('success-message').classList.add('hidden');
+                }
+            }, 2000); // Simulating a 2-second delay for payment processing
+        }
+
+        // Toggle button state on first click
+        function toggleButtonState(buttonId) {
+            const button = document.getElementById(buttonId);
+            
+            // Remove hover effect after the first click
+            button.classList.remove('hover-effect');
+            // Add 'clicked' class to indicate active state
+            button.classList.add('clicked');
+            
+            // If clicked again, toggle the color
+            if (button.classList.contains('clicked')) {
+                button.classList.remove('clicked');
+                button.classList.add('hover-effect');
+            }
+        }
+    </script>
+</body>
+</html>
